@@ -1,0 +1,808 @@
+/*ป้องกันกล่องส้น*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #ffffff;
+  min-width: 1000px;
+}
+
+/*ส่วนของหน้า Contact.html.html*/
+/*เอาไว้ควบคุมส่วนกลางของเว็บ*/
+.main-content {
+  margin-left: 310px;
+  padding-top: 100px;
+  padding-right: 60px;
+  padding-bottom: 50px;
+}
+
+/*หน้าต่างเมนู*/
+.container {
+  background-color: #FFFFFF;
+  width: 250px;
+  height: 100vh;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 6;
+}
+
+/*โปรไฟล์ผู้ใช้*/
+.btn-user-wrapper {
+  background-color: #FCD53F;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  right: 0;
+  height: 57px;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+  z-index: 5;
+  min-width: 1000px;
+}
+
+/*ชื่อปุ่มหน้าหลัก*/
+.btn-Home {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #8C8D8D;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 15px;
+  margin-top: 30px;
+}
+
+/*รูปปุ่มหน้าหลัก*/
+.btn-Home-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+/*ชื่อปุ่มสุ่มของรางวัล*/
+.btn-Random {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #8C8D8D;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 15px;
+  margin-top: 10px;
+}
+
+/*รูปปุ่มสุ่มของรางวัล*/
+.btn-Random-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+/*ชื่อปุ่มติดต่อเรา*/
+.btn-Contact {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 15px;
+  background-color: #FCD53F;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding-left: 5px;
+  max-width: 230px;
+  max-height: 70px;
+  border-radius: 40px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+}
+
+/*รูปปุ่มติดต่อเรา*/
+.btn-Contact-img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+/*หัวข้อของหน้าเว็บ สำนักหอสมุดมหาวิทยาลัยบูรพา (BUULIB) */
+.office_buu{
+  color: #5381EC;
+  width: 100%;
+  font-size: 20px;
+}
+
+/* ปุ่มลูกศรทางซ้าย*/
+.btn-left-arrow {
+  position: absolute;
+  top: 60%;
+  left: 13%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 4;
+}
+
+/* ปุ่มลูกศรทางขวา */
+.btn-right-arrow {
+  position: absolute;
+  top: 55%;
+  right: 10%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 4;
+}
+
+/*แกลลอรี่รูปภาพ*/
+.img-Photo_Gallery{
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 380px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;  
+}
+
+/*รูปภาพในแกลลอรี่*/
+.Gallery-img{
+  position: absolute;
+  width: 80%;
+  object-fit: cover;
+  border-radius: 30px;
+}
+/* รูปที่1 อยู่ซ้าย*/
+.left{
+  transform: translateX(-40%) scale(0.9);
+  opacity: 0.6;
+  z-index: 1;
+  margin-top: 20px;
+}
+/* รูปที่2 อยู่กลาง*/
+.center{
+  z-index: 3;
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+}
+/* รูปที่2 อยู่ขวา*/
+.right{
+  transform: translateX(40%) scale(0.9);
+  opacity: 0.6;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+/*กรอบคุมเวลาทำการ ช่องทางติดต่อ สำนักงาน*/
+.contactbuu{
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 120px;                   
+  margin-top: 280px;
+}
+.contact-group{
+  flex: auto;
+}
+
+/*หัวข้อเวลาทำการ*/
+.section-Business_Hours{
+  color: #5381EC;
+  font-size: 20px;
+  position: relative;
+  left: 80px;
+}
+
+
+/*ข้อมูลเวลาทำการ*/
+.contact-Business_Hours{
+  background-color: #FFFFFF;
+  height: 400px;
+  width: 100%;
+  max-width: 280px;
+  border-radius: 35px;
+  font-weight: 600;
+  font-size: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-left: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+
+/*หัวข้อช่องทางติดต่อเรา*/
+.section-contact-Channels{
+  color: #5381EC;
+  font-size: 20px;
+  position: relative;
+  left: 30px;
+}
+
+/*ช่องทางติดต่อเรา*/
+.contact-Channels{
+  background-color: #FFFFFF;
+  height: 210px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 35px;
+  font-weight: 600;
+  font-size: 17px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+
+/*หัวขัอสำนักงานใหญ่*/
+.section-contact-Office{
+  color: #5381EC;
+  font-size: 20px;
+  position: relative;
+  left: 30px;
+}
+
+/*ช่องทางมาหาเราที่สำนักงานใหญ่*/
+.contact-Office{
+  background-color: #FFFFFF;
+  height: 110px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 17;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.22);
+}
+
+
+/*ส่วนของหน้า Profile.html*/
+/*เอาไว้ควบคุมส่วนกลางของเว็บ*/
+.main-content-1 {
+  margin-left: 310px;
+  padding-top: 100px;
+  padding-right: 60px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+/*โปรไฟล์ผู้ใช้*/
+.btn-user-wrapper-1 {
+  background-color: #FCD53F;
+  position: fixed;
+  top: 0;
+  left: 0px;
+  right: 0;
+  height: 57px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+  min-width: 1000px;
+}
+
+/*ชื่อผู้ใช้*/
+.btn-user {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #FCD53F;
+  background-color: #757575;
+  font-weight: 1000;
+  font-size: 20px;
+  padding: 6px 49px;
+}
+
+/*รูปโปรไฟล์ผู้ใช้*/
+.btn-user-img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+/*แถบเมนูด้านซ้าย*/
+.Top_frame {
+  position: fixed;
+}
+
+/*หน้าต่างเมนู*/
+.container-1 {
+  background-color: #FFFFFF;
+  height: 100vh;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.22);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  width: 250px;
+}
+
+/*โลโก้ BUULIB*/
+.img-Logo{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* ปุ่มเมนูแดชบอร์ด */
+.btn-Home-1 {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #8C8D8D;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 15px;
+  margin-top: 30px;
+}
+
+/*รูปปุ่มแดชบอร์ด*/
+.btn-Home-img-1 {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+/*ชื่อปุ่มจัดการรางวัล*/
+.btn-Random-1 {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #8C8D8D;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 15px;
+  margin-top: 10px;
+}
+
+/*รูปปุ่มจัดการรางวัล*/
+.btn-Random-img-1 {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+/*ชื่อปุ่มจัดการผู้ใช้*/
+.btn-Contact-1 {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #8C8D8D;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 20px 15px;
+  margin-top: 10px;
+}
+
+/*รูปปุ่มจัดการผู้ใช้*/
+.btn-Contact-img-1 {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+/*กรอบชื่อปุ่มออกจากระบบ*/
+.btn-logout-wrapper {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/*ชื่อปุ่มออกจากระบบ*/
+  .btn-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.2px solid #8C8D8D;
+  width: 250px;
+  height: 55px;
+  text-decoration: none;
+  color: #D31313;
+  font-weight: 1000;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+/*รูปปุ่มออกจากระบบ*/
+.btn-logout-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+/*โปรไฟล์*/
+.Profile {
+  background-color: #000000;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 14px rgba(0,0,0,0.22);
+  padding: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/*ชื่อโปรไฟล์*/
+.My_Profile {
+  color: #5381EC;
+  width: 100%;
+  font-size: 20px;
+}
+
+/*โปรไฟล์ฝั่งซ้าย*/
+.profile-left {
+  display: grid;
+  grid-template-columns: 200px;
+  align-items: center;
+  gap: 25px 70px;
+  flex: 1;
+}
+
+/*รูปภาพผู้ใช้*/
+.photo_user {
+  width: 150px;
+  height: 150px;
+  margin-left: 25px;
+  border-radius: 50%;
+  background-color: #000000;
+}
+
+/*รูปภาพผู้ใช้*/
+.photo_user-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/*กรอบpopup*/
+.btn-open {
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/*เอาไว้ขนาดชื่อรูปโปรไฟล์*/
+.Nameprofile {
+  margin-left: 5px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/*กรอบชื่อตรงสถานะ*/
+.useremailstatus {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/*ชื่อ*/
+.name {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 1000;
+  margin-top: 50px;
+}
+.name h2 {
+  margin: 0;
+}
+
+/*อีเมล*/
+.email {
+  color: #8C8D8D;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/*สถานะ*/
+.In_use {
+  background-color: #57D96B;
+  color: #FFFFFF;
+  font-weight: 1000;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+/*กรอบของสุ่มทั้งหมด*/
+.profile-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+/*กล่องสุ่มทั้งหมด*/
+.framerandom_all {
+  background-color: #FFFFFF;
+  width: 250px;
+  height:200px;
+  border-radius: 10px;
+  padding: 20px;
+  flex-direction: column;
+  text-align: center;
+  margin: 0;
+  font-size: 17px;
+}
+
+/*สุ่มทั้งหมด*/
+.random_all {
+  margin-bottom: 15px;
+}
+
+/* กล่องจำนวนรางวัลที่ได้ */
+.frameReward_Box {
+  background-color: #FFFFFF;
+  width: 250px;
+  height:200px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  font-size: 17px;
+}
+
+/*กล่องของรางวัล*/
+.Reward_Box {
+  margin-bottom: 15px;
+}
+
+/*ตัวเลขจำนวนรางวัลที่ได้*/
+.Number_of_Reward {
+  font-size: 18px;
+}
+.Number_of_Reward h1{
+  margin: 6px;
+}
+
+/*ตัวเลขจำนวนรางวัลที่ได้*/
+.Award_Name {
+  color: #000000;
+  font-size: 15px;
+}
+.Award_Name h4{
+  margin: 15px;
+  font-size: 17px;
+}
+
+/*ข้อมูลผู้ใช้*/
+.User_Information {
+  background-color: #ffffff;
+  flex: 3;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.22);
+  border-radius: 15px;
+  padding-bottom: 60px;
+  margin-top: 60px;
+}
+
+/*ข้อมูลส่วนตัว*/
+.personal_information {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28px;
+  padding: 10px 25px 0 25px;
+}
+
+/*ปุ่มแก้ไขข้อมูล*/
+.btn-Edit_information {
+  border-radius: 12px;
+  width: 120px;
+  height: 55px;
+  font-size: 15px;
+  font-weight: 1000;
+  background-color: #030303;
+  color: #FFFFFF;
+  cursor: pointer;
+  box-shadow: 0 8px 14px rgba(0,0,0,0.22);
+}
+
+/*ชื่อผู้ใช้*/
+.username {
+  display: flex;
+  align-items: center;
+  padding: 0 25px;
+  font-size: 23px;
+  gap: 20px 100px;
+}
+/*หัวข้อชื่อผู้ใช้ ทำให้ขึ้นเคอร์เซอร์เมาส์*/
+.Type_username{
+  cursor: text;
+}
+
+/*กรอบเอาไว้กรอกข้อมูลชื่อผู้ใช้*/
+.input-username {
+  flex: 1;
+  border-radius: 7px;
+  width: 540px;
+  border: 2px solid #8C8D8D;
+  padding: 13px 16px;
+  font-size: 15px; 
+}
+
+/*ชื่อ-นามสกุล*/
+.FirstName-LastName {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 25px;
+  font-size: 23px;
+  gap: 20px 50px;
+}
+/*หัวข้อชื่อ-นามสกุล ทำให้ขึ้นเคอร์เซอร์เมาส์*/
+.FirstNameLastName{
+  cursor: text;
+}
+
+/*กรอบเอาไว้กรอกข้อมูลชื่อ-นามสกุล*/
+.input-FirstName-LastName {
+  flex: 1;
+  border-radius: 7px;
+  border: 2px solid #8C8D8D;
+  padding: 13px 16px;
+
+}
+
+/* ช่องกรอกอีเมล */
+.email-user {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 25px;
+  font-size: 23px;
+  gap: 20px 120px;
+}
+
+/*หัวข้ออีเมล ทำให้ขึ้นเคอร์เซอร์เมาส์*/
+.typeemail-user{
+  cursor: text;
+}
+
+/*กรอบเอาไว้กรอกอีเมล*/
+.input-email-user {
+  width: 100%;
+  border-radius: 7px;
+  border: 2px solid #8C8D8D;
+  padding: 13px 16px;
+  font-size: 15px;
+}
+
+/*เบอร์โทร*/
+.phone_number {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 0 25px;
+  font-size: 23px;
+  gap: 20px 85px;
+}
+
+/*หัวข้อเบอร์โทร ทำให้ขึ้นเคอร์เซอร์เมาส์*/
+.typephone_number{
+  cursor: text;
+}
+
+/*กรอบเอาไว้กรอกเบอร์โทร*/
+.input-phonenumber {
+  flex: 1;
+  border-radius: 7px;
+  border: 2px solid #8C8D8D;
+  padding: 13px 16px;
+  font-size: 15px;
+}
+
+/*เปลี่ยนรหัสผ่าน*/
+.Change_password {
+  background-color: #FFFFFF;
+  flex: 2;
+  max-height: 370px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.22);
+  border-radius: 15px;
+  margin-top: 60px;
+}
+
+/*รหัสผ่าน*/
+.password {
+  font-size: 28px;
+  padding: 20px 25px 0 25px;
+}
+
+/*รหัสผ่านปัจจุบัน*/
+.Current_password {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 25px;
+  font-size: 23px;
+  gap: 20px 40px;
+}
+
+/*หัวข้อรหัสผ่านปัจจุบัน ทำให้ขึ้นเคอร์เซอร์เมาส์*/
+.typeCurrent_password{
+  cursor: text;
+}
+
+/*กรอบเอาไว้กรอกรหัสผ่านปัจจุบัน*/
+.input-Current_password {
+  flex: 1;
+  border-radius: 7px;
+  border: 2px solid #8C8D8D;
+  padding: 13px 16px;
+  font-size: 15px;
+}
+
+/*เปลี่ยนครั้งล่าสุด*/
+.Last_updated {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 0 25px;
+  font-size: 23px;
+  gap: 20px 19px;
+}
+
+/*หัวข้อเปลี่ยนรหัสครั้งล่าสุด ทำให้ขึ้นเคอร์เซอร์เมาส์*/
+.typelast_updated{
+  cursor: text;
+}
+
+/*กรอบเอาไว้กรอกเปลี่ยนรหัสครั้งล่าสุด*/
+.input-Last_updated {
+  flex: 1;
+  border-radius: 7px;
+  border: 2px solid #8C8D8D;
+  padding: 13px 16px;
+  font-size: 15px;
+}
+
+/*ปุ่มเปลี่ยนหัสผ่าน*/
+.Password_Change_Button {
+  padding: 20px 20px 0 50px;
+  text-align: right;
+}
+
+/*กรอบเปลี่ยนหัสผ่าน*/
+.btn-Change_password {
+  background-color: #000000;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 12px;
+  width: 120px;
+  height: 55px;
+  font-size: 15px;
+  font-weight: 1000;
+  box-shadow: 0 8px 14px rgba(0,0,0,0.22);
+  cursor: pointer;
+}
