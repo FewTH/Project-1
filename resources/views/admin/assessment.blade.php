@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>แบบประเมิน/กิจกรรม</title>
     <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}">
+    <link rel="icon" href="{{ asset('admin/img/Logo.png') }}">
 </head>
 <body>
     <!-- ชื่อผู้ใช้งาน -->
@@ -15,31 +16,31 @@
     </a>
 </div>
 <!--กรอบของเมนูปิดแท็กตรงออกจากระบบ-->
-<div class="container">
+<div class="container-assessment">
     <!-- โลโกมหาลัย -->
     <div class="img-Logo">
         <img src="{{ asset('admin/img/Logo.png') }}" alt="รูปโลโกมหาลัย" class="Logo-img">
 </div>
 <!-- ปุ่มเมนู -->
-<div class="btn-Sidebar">
-    <a href="{{ url('admin/dashboard') }}" class="btn-Dashboard">
-        <img src="{{ asset('admin/img/แดชบอร์ดสีดำ.png') }}" alt="รูปแดชบอร์ด" class="btn-Dashboard-img">
+<div class="btn-Sidebar-assessment">
+    <a href="{{ url('admin/dashboard') }}" class="btn-Dashboard-assessment">
+        <img src="{{ asset('admin/img/แดชบอร์ด.png') }}" alt="รูปแดชบอร์ด" class="btn-Dashboard-img-assessment">
         <span>แดชบอร์ด</span>
     </a>
-    <a href="{{ url('admin/managereward') }}" class="btn-Manage_Rewards">
-        <img src="{{ asset('admin/img/รูปจัดการรางวัล.png') }}" alt="รูปสุ่มของรางวัล" class="btn-Manage_Rewards-img">
+    <a href="{{ url('admin/managereward') }}" class="btn-Manage_Rewards-assess">
+        <img src="{{ asset('admin/img/รูปจัดการรางวัล.png') }}" alt="รูปสุ่มของรางวัล" class="btn-Manage_Rewards-img-assess">
         <span>จัดการรางวัล</span>
     </a>
     <a href="{{ url('admin/manageuser') }}" class="btn-Manage_users">
         <img src="{{ asset('admin/img/รูปจัดการผู้ใช้.png') }}" alt="รูปติดต่อเรา" class="btn-Manage_users-img">
         <span>จัดการผู้ใช้</span>
     </a>
-    <a href="{{ url('รอเปลี่ยน') }}" class="btn-Managewheel">
+    <a href="{{ url('admin/managespin') }}" class="btn-Managewheel">
         <img src="{{ asset('admin/img/รูปจัดการวงล้อสุ่ม.png') }}" alt="รูปติดต่อเรา" class="btn-Managewheel-img">
         <span>จัดการวงล้อสุ่ม</span>
     </a>
-    <a href="{{ url('admin/assessment') }}" class="btn-Assessment">
-        <img src="{{ asset('admin/img/รูปแบบประเมินกิจกรรม.png') }}" alt="รูปติดต่อเรา" class="btn-Assessment-img">
+    <a href="{{ url('admin/assessment') }}" class="btn-Assessment-assess">
+        <img src="{{ asset('admin/img/รุปแบบประเมินกิจกรรมสีดำ.png') }}" alt="รูปติดต่อเรา" class="btn-Assessment-img-assess">
         <span>แบบประเมิน/กิจกรรม</span>
     </a>
 </div>
@@ -47,10 +48,96 @@
 <div class="btn-logout-wrapper">
     <a href="{{ url('user/loginuser') }}" class="btn-logout">
         <img src="{{ asset('admin/img/รูปปุ่มกดออก.png') }}" alt="รูปออกจากระบบ" class="btn-logout-img">
-        <span>ออกจากระบบ </span>
+        <span>ออกจากระบบ</span>
     </a>
     </div>
 </div> 
+<!--เอาไว้ควบคุมส่วนกลางของเว็บปิดล่างสุด-->
+<div class="main-content">
+
+    <div class="sectionlist">
+        <h1>รายการกิจกรรม</h1>
+    </div>
+
+    <div class="btn-activity-rate">
+        <button class="btn-activity" id="btn_activity">
+            <h3 class="btn-activity-1" id="btn_activity_1">รายการกิจกรรม</h3>
+            <p class="number-activity" id="number_activity">4</p>
+        </button>
+        <button class="btn-rate" id="btn_rate">
+            <h3 class="btn-rate-1" id="btn_rate_1">แบบประเมิน</h3>
+            <p class="number-rate" id="number_rate">3</p>
+        </button>
+    </div>
+
+    <div class="bulb-black">
+        <div class="bulb-yellow" id="bulb_yellow"></div>
+    </div>
+
+<!--กรอบของรายการกิจกรรม-->
+<div class="frame-grey" id="frame_grey">
+    <div class="activity-Closed-Open">
+        <div class="all-activities">
+            <h1 class="activities-number-assessment" id="activities_number_assessment">3</h1>
+            <p class="activities-assessment">กิจกรรมทั้งหมด</p>
+        </div>
+        <div class="Closed-assessment">
+            <h1 class="Closed-assessment-1" id="Closed_assessment_1">2</h1>
+            <p class="Closed-assessment-2">ปิดแล้ว</p>
+        </div>
+        <div class="Open-assessment">
+            <h1 class="open-assessment-1" id="open_assessment_1">1</h1>
+            <p class="open-assessment-2">เปิดอยู่</p>
+        </div>
+        <div class="btn-build-activityurgent">
+            <a href="{{ url('admin/create_activity') }}" class="btn-build-activityurgent-1"><span class="btn-plus">+</span> สร้างกิจกรรมด่วน</a>
+        </div>
+    </div>
+
+
+    <div class="frame-search-activity" id="frame_search_activity">
+        <input type=text class="search-activity" placeholder="ค้นหารายชื่อกิจกรรม">
+        <img src="{{ asset('admin/img/รูปปุ่มค้นหน้าหน้าแบบประเมินกิจกรรม.png') }}" alt="รูปปุ่มค้นหน้าหน้าแบบประเมินกิจกรรม" class="img-btn-activity">
+    </div>
+
+
+    <div class="frame-activity-assessment">
+        <div class="framecontentactivity">
+            <h4 class="headingactivity">กิจกรรมเช็คอินโต้รุ่ง ช่วงติวไฟนอล 2568</h4>
+            <p class="messagecreationtime">สร้างเมื่อ 20 ต.ค. 2568 · ปิด Register 23 ต.ค. 2568</p>
+            <div class="frameclosed">
+                <p class="pointclosed">· <span class="closed" >ปิดอยู่</span> </p>
+            </div>
+        </div>
+        <hr class="lineactivity-1">
+        <div class="maximumnumber_outtime">
+            <p class="maximumnumber">ผู้เข้าร่วมสูงสุด 10 คน</p>
+            <p class="outtime">หมดเวลา 11.30 น.</p>
+        </div>
+        <div class="framerank-1-2-3">
+            <div class="framerank-1-assessment">
+                <p class="rank-1-assessmant">ดินสอ</p>
+            </div>
+            <div class="framerank-2-assessment">
+                <p class="rank-2-assessmant">สมุดโน้ต</p>
+            </div>
+            <div class="framerank-3-assessment">
+                <p class="rank-3-assessmant">สมุดโน้ต</p>
+            </div>
+        </div>
+        <hr class="lineactivity-2">
+        <div class="register">
+            <p class="register-1">8 คนลงทะเบียนแล้ว</p>
+            <button class="view-details">ดูรายละเอียด</button>
+        </div>
+    </div>
+
+    
+<div id="cardContainer"></div>
+</div>
+</div>
+
+
 
     <script src="{{ asset('admin/js/JavaScriptAdmin.js') }}"></script>
 </body>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>แดชบอร์ด</title>
     <link rel="stylesheet" href="{{ asset('admin/css/style.css') }}">
+    <link rel="icon" href="{{ asset('admin/img/Logo.png') }}">
 </head>
 <body>
 <!-- ชื่อผู้ใช้งาน -->
@@ -34,7 +35,7 @@
         <img src="{{ asset('admin/img/รูปจัดการผู้ใช้.png') }}" alt="รูปติดต่อเรา" class="btn-Manage_users-img">
         <span>จัดการผู้ใช้</span>
     </a>
-    <a href="{{ url('รอเปลี่ยน.html') }}" class="btn-Managewheel">
+    <a href="{{ url('admin/managespin') }}" class="btn-Managewheel">
         <img src="{{ asset('admin/img/รูปจัดการวงล้อสุ่ม.png') }}" alt="รูปติดต่อเรา" class="btn-Managewheel-img">
         <span>จัดการวงล้อสุ่ม</span>
     </a>
@@ -61,11 +62,27 @@
     </div>
 <!--ปุ่มกดวัน สัปดาห์ เดือน -->
     <div class="ButtonDate">
-        <button type="button" class="btn-day" id="button-day">วัน</button>
+        <div class="btn-day" id="button-day">
+        <button type="button" class="btn-day-1">วัน</button>
+        </div>
         <button type="button" class="btn-week" id="button-week">สัปดาห์</button>
         <button type="button" class="btn-month" id="button-month">เดือน</button>
     </div>
 </div>
+ <div id="dashboard_error" class="dashboard-error">
+    <div class="dashboard-error-1">
+        <img src="{{ asset('admin/img/รูปerror หน้าแดชบอร์ด.png') }}" alt="รูปerrorหน้าแดชบอร์ด" class="img-dashboard-error">
+        <div class="cannotDownload-1">
+        <p class="cannotDownload">โหลดข้อมูลไม่สำเร็จ</p>
+        <p class="cannotDownloadDashboard">ไม่สามารถโหลดข้อมูลแดชบอร์ดได้ กรุณาลองใหม่อีกครั้ง</p>
+        </div>
+        <button class="but-cannotDownload" id="but_cannotDownload">
+            <img src="{{ asset('admin/img/รูปปุ่มรีโหลดหน้าแดชบอร์ด.png') }}" alt="รูปปุ่มรีโหลดหน้าแดชบอร์ด" class="img-but-cannotDownload">
+            <span class="but-cannotDownload-1">ลองใหม่<span>
+        </button>
+    </div>
+</div>
+
 <!--กรอบรวมของผู้ใช้ ทำแบบประเมิน สุ่ม รอรับของขวัญ-->
 <div class="alluser_frames-1">
 <!--กรอบผู้ใช้งานทั้งหมด-->
@@ -152,26 +169,26 @@
     </div>
 <!--กรอบของดินสอทั้งหมด-->
 <div class="framepancil" id="rank1"> 
-    <div class="redframe"></div>
+    <div class="redframe" id="rank1_redframe"></div>
     <div class="pencil">
-        <img src="{{ asset('admin/img/ดินสอ.png') }}" alt="ดินสอ" class="img-pencil-1" id="img-pencil">
-        <h3 id="namepencil">ดินสอ</h3>
+        <img src="{{ asset('admin/img/ดินสอ.png') }}" alt="ดินสอ" class="img-pencil-1" id="rank1_img">
+        <h3 id="rank1_name">ดินสอ</h3>
     </div>
     <div class="timeallpancil">
-        <p><span id="allpancil"> 45 </span> ครั้ง </p>
+        <p><span id="rank1_times"> 45 </span> ครั้ง </p>
     </div>
     <div class="point-1">
         <p> · </p>
     </div>
     <div class="settingspencil">
-        <p><span id="settings_pencil"> 50 % </span>ตั้งค่า</p>
+        <p><span id="rank1_setting"> 50 % </span>ตั้งค่า</p>
     </div>
 <div class="black-frame-pencil-1">
     <div class="black-frame-pencil">
-        <div class="frame-pencil" id="black_frame_pencil"></div>
+        <div class="frame-pencil" id="rank1_bar"></div>
     </div>
     <div class="Percent-1">
-        <p id="per_cent1">24%</p>
+        <p id="rank1_percent">24%</p>
         </div>
     </div>
 </div>
@@ -179,26 +196,26 @@
     <hr class="blackline-1">
 <!--กรอบของสมุดทั้งหมด-->
 <div class="framenotebook" id="rank2">
-    <div class="blueframe"></div>
+    <div class="blueframe" id="rank2_blueframe"></div>
     <div class="notebook">
-        <img src="{{ asset('admin/img/สมุด.png') }}" alt="รูปสมุด" class="img-notebook-1" id="img-notebook">
-        <h3 id="namenotebook">สมุด</h3>
+        <img src="{{ asset('admin/img/สมุด.png') }}" alt="รูปสมุด" class="img-notebook-1" id="rank2_img">
+        <h3 id="rank2_name">สมุด</h3>
     </div>
     <div class="timeallnotebook">
-        <p><span id="allnotebook"> 25 </span> ครั้ง </p>
+        <p><span id="rank2_times"> 25 </span> ครั้ง </p>
     </div>
     <div class="point-2">
         <p> · </p>
     </div>
     <div class="settingsnotebook">
-        <p><span id="settings_notebook"> 40 % </span>ตั้งค่า</p>
+        <p><span id="rank2_setting"> 40 % </span>ตั้งค่า</p>
     </div>
 <div class="black-frame-notebook-1">
     <div class="black-frame-notebook">
-        <div class="frame-notebook" id="black_frame_notebook1"></div>
+        <div class="frame-notebook" id="rank2_bar"></div>
     </div>
     <div class="Percent-2">
-        <p id="per_cent2">19%</p>
+        <p id="rank2_percent">19%</p>
     </div>
     </div>
 </div>
@@ -206,52 +223,52 @@
     <hr class="blackline-2">
 <!--กรอบของหนังสือทั้งหมด-->
 <div class="framebook" id="rank3">
-    <div class="greenframe"></div>
+    <div class="greenframe" id="rank3_greenframe"></div>
     <div class="book">
-        <img src="{{ asset('admin/img/หนังสือ.png') }}" alt="รูปหนังสือ" class="img-book-1" id="img-book">
-        <h3 id="namebook">หนังสือ</h3>
+        <img src="{{ asset('admin/img/หนังสือ.png') }}" alt="รูปหนังสือ" class="img-book-1" id="rank3_img">
+        <h3 id="rank3_name">หนังสือ</h3>
     </div>
     <div class="timeallbook">
-        <p><span id="allbook"> 20 </span> ครั้ง </p>
+        <p><span id="rank3_times"> 20 </span> ครั้ง </p>
     </div>
     <div class="point-3">
         <p> · </p>
     </div>
     <div class="settingsbook">
-        <p><span id="settings_book"> 20 % </span>ตั้งค่า</p>
+        <p><span id="rank3_setting"> 20 % </span>ตั้งค่า</p>
     </div>
 <div class="black-frame-book-1">
     <div class="black-frame-book">
-        <div class="frame-book" id="black_frame_book1"></div>
+        <div class="frame-book" id="rank3_bar"></div>
     </div>
     <div class="Percent-3">
-        <p id="per_cent3">15%</p>
+        <p id="rank3_percent">15%</p>
     </div>
     </div>
 </div>
     <hr class="blackline-3">
 <!--กรอบของแบตสำรองทั้งหมด-->
 <div class="framepowerbank" id="rank4">
-    <div class="orangeframe"></div>
+    <div class="orangeframe" id="rank4_orangeframe"></div>
     <div class="powerbank">
-        <img src="{{ asset('admin/img/แบตสำรอง.png') }}" alt="รูปแบตสำรอง" class="img-powerbank-1" id="img-powerbank">
+        <img src="{{ asset('admin/img/แบตสำรอง.png') }}" alt="รูปแบตสำรอง" class="img-powerbank-1" id="rank4_img">
         <h3 id="namepowerbank">แบตสำรอง</h3>
     </div>
     <div class="timeallpowerbank">
-        <p><span id="allpowerbank"> 10 </span> ครั้ง </p>
+        <p><span id="rank4_times"> 10 </span> ครั้ง </p>
     </div>
     <div class="point-4">
         <p> · </p>
     </div>
     <div class="settingspowerbank">
-        <p><span id="settings_powerbank"> 10 % </span>ตั้งค่า</p>
+        <p><span id="rank4_setting"> 10 % </span>ตั้งค่า</p>
     </div>
 <div class="black-frame-powerbank-1">
     <div class="black-frame-powerbank">
-        <div class="frame-powerbank" id="black_frame_powerbank1"></div>
+        <div class="frame-powerbank" id="rank4_bar"></div>
     </div>
     <div class="Percent-4">
-        <p id="per_cent4">13%</p>
+        <p id="rank4_percent">13%</p>
         </div>
     </div>
 </div>
@@ -298,6 +315,7 @@
         <h4 class="from_yesterday-1" id="from_yesterday1">↗ +12 % จากเมื่อวาน</h4>
     </div>
     </div>
+</div>
 </div>
 </div>
     <script src="{{ asset('admin/js/JavaScriptAdmin.js') }}"></script>

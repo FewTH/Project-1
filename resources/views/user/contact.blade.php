@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ติดต่อเรา</title>
     <link rel="stylesheet" href="{{ asset('user/css/style.css') }}">
+    <link rel="icon" href="{{ asset('user/img/Logo.png') }}">
 </head>
 <body>
     <!-- ชื่อผู้ใช้งาน -->
@@ -52,15 +53,19 @@
     </div>
     <!-- แกลลอรี่รูปภาพ -->
     <div class="img-Photo_Gallery">
-        <button id="arrow-left" class="btn-left-arrow">
-            <img src="{{ asset('user/img/ลูกศรทางซ้าย.png') }}" alt="ลูกศรทางซ้าย" class="arrow-left-img" >
-        </button>
+        <div class="btn-left-arrow-1">
+            <button id="arrow-left" class="btn-left-arrow">
+                <img src="{{ asset('user/img/ลูกศรทางซ้าย.png') }}" alt="ลูกศรทางซ้าย" class="arrow-left-img" >
+            </button>
+        </div>
         <img src="{{ asset('user/img/รูปสำนักหอสมุด1.png') }}" alt="รูปสำนักหอสมุด1" class="Gallery-img left" id="Gallery_img_left">
         <img src="{{ asset('user/img/รูปสำนักหอสมุด2.png') }}" alt="รูปสำนักหอสมุด2" class="Gallery-img center" id="Gallery_img_center">
         <img src="{{ asset('user/img/รูปสำนักหอสมุด3.png') }}" alt="รูปสำนักหอสมุด3" class="Gallery-img right" id="Gallery_img_right">
-        <button id="arrow-right" class="btn-right-arrow">
-            <img src="{{ asset('user/img/ลูกศรทางขวา.png') }}" alt="ลูกศรทางขวา" class="arrow-right-img">
-        </button>
+        <div class="btn-right-arrow-1">
+            <button id="arrow-right" class="btn-right-arrow">
+                <img src="{{ asset('user/img/ลูกศรทางขวา.png') }}" alt="ลูกศรทางขวา" class="arrow-right-img">
+            </button>
+        </div>
     </div>
 
 <!--กรอบคุมเวลาทำการ ช่องทางติดต่อ สำนักงาน-->
