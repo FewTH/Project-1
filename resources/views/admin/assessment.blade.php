@@ -61,11 +61,11 @@
 
     <div class="btn-activity-rate">
         <button class="btn-activity active" id="btn_activity">
-            <h3 class="btn-activity-1" id="btn_activity_1">รายการกิจกรรม</h3>
+            <h3 class="btn-activity-1">รายการกิจกรรม</h3>
             <p class="number-activity active" id="number_activity">4</p>
         </button>
         <button class="btn-rate" id="btn_rate">
-            <h3 class="btn-rate-1" id="btn_rate_1">แบบประเมิน</h3>
+            <h3 class="btn-rate-1">แบบประเมิน</h3>
             <p class="number-rate" id="number_rate">3</p>
         </button>
     </div>
@@ -106,7 +106,7 @@
             <h4 class="headingactivity">กิจกรรมเช็คอินโต้รุ่ง ช่วงติวไฟนอล 2568</h4>
             <div class="frameclosed">
                 <p class="pointclosed"></p>
-                <span class="closed" >ปิดแล้ว</span>
+                <span class="closed" >ปิด</span>
             </div>
         </div>
         <p class="messagecreationtime">สร้างเมื่อ 20 ต.ค. 2568 · ปิด Register 23 ต.ค. 2568</p>
@@ -141,8 +141,76 @@
 
 <!--กรอบของแบบประเมิน-->
 <div class="frame-evaluation" id="frame_evaluation">
+    <div class="frame-search-activity-1">
+        <div class="search-activity-1">
+        <input type=text class="search-activity-2" id="frame_search_activity_2" placeholder="ค้นหารายชื่อแบบประเมิน">
+        <img src="{{ asset('admin/img/รูปปุ่มค้นหน้าหน้าแบบประเมินกิจกรรม.png') }}" alt="รูปปุ่มค้นหน้าหน้าแบบประเมินกิจกรรม" class="img-btn-activity-2" id="img_btn_activity_1">
+        </div>
+        <div class="framealloffon-assessment">
+            <button class="frameall-assessment" id="frameall_assessment">
+                <p class="all-assessment">ทั้งหมด</p>
+                <span class="allnumber-assessment" id="allnumber_assessment">(0)</span>
+            </button>
+            <button class="frameoff-assessment">
+                <p class="off-assessment">ปิดแล้ว</p>
+                <span class="offnumber-assessment" id="offnumber_assessment">(0)</span>
+            </button>
+            <button class="farmeon-assessment">
+                <p class="on-assessment">เปิดอยู่</p>
+                <span class="onnumber-assessment" id="onnumber_assessment">(0)</span>
+            </button>
+        </div>
+        <div class="frame-assign-assessment">
+            <button class="btn-assign-assessment"  id="btn_assign_assessment">
+                <img src="{{ asset('admin/img/รูปของปุ่มมอบหมายแบบประเมิน.png') }}" alt="รูปของปุ่มมอบหมายแบบประเมิน" class="img-assign-assessment">
+                <p class="message-assign-assessment">มอบหมายแบบประเมิน</p>
+            </button>
+        </div>
+    </div>
+    
+    <!--กรอบของแบบประเมินที่ดึงมาจาก api-->
+    <div class="frame-grey-1">
 
 
+        <div class="sectionassessment">
+            <h3>แบบประเมิน - BUU Book Fair 2569</h3>
+            <div class="frameinformation-assessment">
+                <div class="framesection-status">
+                    <h2 class="section-assessment">แบบประเมิน - BUU Book Fair 2569</h2>
+                    <div class="frame-status">
+                        <p class="point-status"></p>
+                        <p class="message-status">เปิดอยู่</p>
+                    </div>
+                    <p class="message-assessment">ผู้เข้าร่วมประเมิน 8 คน • รางวัล ดินสอ สมุดโน้ต กระเป๋าดินสอ </p>
+                    <p class="message-created-by">สร้างโดย: Admin • ปิดรับคำตอบ: 20 พ.ค. 2569</p>
+                    <div>
+                    
+
+                        <button class="assessment-open-1">
+                            <p class="message-assessment-open">แบบประเมินยังเปิดอยู่</p>
+                        </button>
+
+
+                        <button class="enter-random">
+                            <img src="{{ asset('admin/img/รูปของปุ่มเข้าสู้การสุ่มรางวัล.png') }}" alt="รูปของปุ่มเข้าสู้การสุ่มรางวัล" class="img-enter-random">
+                            <p class="message-enter-random">เข้าสู้การสุ่มรางวัล</p>
+                        </button>
+
+
+
+                        <button class="view-history">
+                            <p class="message-view-history">ดูประวัติการสุ่ม</p>
+                        </button>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+        
+    </div>
 </div>
 
 </div>

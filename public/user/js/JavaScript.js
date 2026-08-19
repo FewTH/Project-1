@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function(){
 
 //ส่วนของหน้า profile.blade.php
-//ปุ่มเปิดเปลี่ยนรูปโปรไฟล์ หน้า profile.blade.php
+//ปุ่มเปิดpopupเปลี่ยนรูปโปรไฟล์ หน้า profile.blade.php
 const btnopen_1 = document.getElementById('btn_open_1');
 
 if(btnopen_1){
@@ -11,6 +11,7 @@ if(btnopen_1){
     });
 }
 
+//ปุ่มปิดpopupเปลี่ยนรูปโปรไฟล์ หน้า profile.blade.php
 const btnclose_1 = document.getElementById('btn_close_1');
 
 if(btnclose_1){
@@ -19,7 +20,7 @@ if(btnclose_1){
     });
 }
 
-//ปุ่มเปิดpopup หน้า profile.blade.php
+//ปุ่มเปิดpopupแก้ไขข้อมูล หน้า profile.blade.php
 const editinformation = document.getElementById('Edit_information')
 
 if(editinformation){
@@ -28,7 +29,7 @@ if(editinformation){
 });
 }
 
-//ปุ่มปิดpopup หน้า profile.blade.php
+//ปุ่มปิดpopupแก้ไขข้อมูล หน้า profile.blade.php
 const btncloseedit = document.getElementById ('btn_close_Edit');
 
 if(btncloseedit){
@@ -36,6 +37,35 @@ if(btncloseedit){
         document.getElementById('popup_btn_edit').close();
     });
 }
+
+//ปุ่มเปิดpopupเปลี่ยนรหัสผ่าน หน้า profile.blade.php
+const Changepassword = document.getElementById('Change_password');
+
+if(Changepassword){
+    Changepassword.addEventListener('click', function(){
+        document.getElementById('popup_btn_Change').showModal();
+    });
+}
+
+//ปุ่มปิดpopupเปลี่ยนรหัสผ่าน หน้า profile.blade.php
+const btnclosechange = document.getElementById('btn_close_change');
+
+if(btnclosechange){
+    btnclosechange.addEventListener('click', function(){
+        document.getElementById('popup_btn_Change').close();
+    });
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

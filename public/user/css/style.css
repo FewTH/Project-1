@@ -1814,7 +1814,8 @@ body {
 }
 /*กรอบpopupเปลี่ยนรหัสผ่าน*/
 .popup-btn-Change-1{
-  top: 45%;
+  position: absolute;
+  top: 25%;
   left: 8%;
   width: 400px;
   height: 340px;

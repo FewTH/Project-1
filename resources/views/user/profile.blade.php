@@ -212,7 +212,7 @@
             <div class="btn-change-password" id="btn_change_password">
                 <a href="{{ url('user/change_password') }}" class="btn-change-password-1">ยืนยัน</a>
             </div>
-            <div class="btn-close-change"  id="btn_change_password"> 
+            <div class="btn-close-change"  id="btn_close_change"> 
                 <button class="btn-close-change-1">ยกเลิก</button>
             </div>
         </div>

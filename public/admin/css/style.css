@@ -2172,6 +2172,10 @@ body {
   transition: width 0.1s, height 0.1s;
 }
 
+.frameclosed.is-open::before{
+  background-color: #17a34a1f;
+}
+
 /*กรอบวงกลมของเอฟเฟ็กต์กรอบของสถานะปิดแล้ว*/
 .frameclosed:hover::before{
   width: 100px;
@@ -2188,12 +2192,21 @@ body {
   z-index: 1;
 }
 
+.frameclosed.is-open .pointclosed{
+  background-color: #17A34A;
+}
+
 /*ข้อความปิดแล้ว*/
-.closed{
-  color: #D31313;
+.closed, .open{
   font-weight: 600;
   position: relative;
   z-index: 1;
+}
+.closed{
+  color: #D31313;
+}
+.open{
+  color: #17A34A;
 }
 
 /*ข้อความเวลาสร้าง*/
@@ -2340,14 +2353,121 @@ body {
   z-index: 1;
 }
 
-
+/*กรอบของข้อมูลทั้งหมดของปุ่มแบบประเมินเอาไว้กดปิด*/
 .frame-evaluation{
   display: none;
 }
-
+/*กรอบของข้อมูลทั้งหมดของปุ่มแบบประเมินเอาไว้โชว์ข้อมูล*/
 .frame-evaluation.active{
   display: block;
 }
+
+/*กรอบของกรอบค้นหาถึง ปุ่มมอบหมายแบบประเมิน*/
+.frame-search-activity-1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+/*กรอบค้นหา*/
+.search-activity-1{
+  position: relative;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  width: 600px;
+  border-radius: 15px;
+  border: 2px solid #8C8D8D;
+  overflow: hidden;
+  box-shadow: 0px 8px 14px rgba(0,0,0,0.22);
+}
+
+/*เอฟเฟ็กต์ของกรอบค้นหา*/
+.search-activity-1::before{
+  content: "";
+  background-color: #ececec77;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  left: 50%;
+  top: 57%;
+  transform: translate(-50%, -50%);
+  transition: width 0.1s, height 0.1s;
+}
+
+/*กรอบวงกลมเอฟเฟ็กต์ของกรอบค้นหา*/
+.search-activity-1:hover::before{
+  width: 650px;
+  height: 200px;
+}
+
+/*ข้อความของกรอบค้นหา*/
+.search-activity-2{
+  outline: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  width: 600px;
+  border: none;
+  background: none;
+  position: relative;
+  z-index: 1;
+}
+
+/*รูปของกรอบค้นหา*/
+.img-btn-activity-2{
+  position: absolute;
+  margin-left: 530px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/*กรอบของทั้งหมด ปิดแล้ว เปิดอยู่*/
+.framealloffon-assessment{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/*กรอบของปุ่มทั้งหมด*/
+.frameall-assessment{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: 2px solid #8C8D8D;
+  width: 120px;
+  height: 45px;
+  cursor: pointer;
+  box-shadow: 0px 8px 14px rgba(0,0,0,0.22);
+}
+
+
+.all-assessment{
+  font-size: 16px;
+  font-weight: 600;
+  padding-right: 5px;
+  color: #8C8D8D;
+}
+
+
+.allnumber-assessment{
+  font-size: 16px;
+  font-weight: 600;
+  color: #8C8D8D;
+  position: relative;
+  top: 1px;
+}
+
+
+
+
+
+
+
 
 
 
@@ -3322,7 +3442,8 @@ body {
 
 /*กรอบpopupเปลี่ยนรหัสผ่าน*/
 .popup-btn-Change-1{
-  top: 45%;
+  position: absolute;
+  top: 25%;
   left: 8%;
   width: 400px;
   height: 340px;
@@ -3332,9 +3453,11 @@ body {
   z-index: 2;
 }
 
+
 .popup-btn-Change-1.active{
   display: block;
 }
+
 
 /*รูปpopupเปลี่ยนรหัสผ่าน*/
 .img-change-password{
