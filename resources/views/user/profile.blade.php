@@ -204,7 +204,7 @@
     </div>
     <!--popupเปลี่ยนรหัสผ่าน-->
     <div class="popup-btn-Change">
-        <dialog id="popup_btn_Change" class="popup-btn-Change-1"open>
+        <dialog id="popup_btn_Change" class="popup-btn-Change-1">
             <img src="{{ asset('user/img/รูปเปลี่ยนรหัสผ่าน.png') }}" alt="รูปเปลี่ยนรหัสผ่าน" class="img-change-password">
             <h2 class="change-password">เปลี่ยนรหัสผ่าน</h2>
             <p class="message-change-password">คุณต้องการเปลี่ยนรหัสผ่านนี้หรือไม่?</p>

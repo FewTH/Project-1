@@ -60,9 +60,9 @@
     </div>
 
     <div class="btn-activity-rate">
-        <button class="btn-activity" id="btn_activity">
+        <button class="btn-activity active" id="btn_activity">
             <h3 class="btn-activity-1" id="btn_activity_1">รายการกิจกรรม</h3>
-            <p class="number-activity" id="number_activity">4</p>
+            <p class="number-activity active" id="number_activity">4</p>
         </button>
         <button class="btn-rate" id="btn_rate">
             <h3 class="btn-rate-1" id="btn_rate_1">แบบประเมิน</h3>
@@ -75,7 +75,7 @@
     </div>
 
 <!--กรอบของรายการกิจกรรม-->
-<div class="frame-grey" id="frame_grey">
+<div class="frame-grey active" id="frame_grey">
     <div class="activity-Closed-Open">
         <div class="all-activities">
             <h1 class="activities-number-assessment" id="activities_number_assessment">3</h1>
@@ -92,23 +92,24 @@
         <div class="btn-build-activityurgent">
             <a href="{{ url('admin/create_activity') }}" class="btn-build-activityurgent-1"><span class="btn-plus">+</span> สร้างกิจกรรมด่วน</a>
         </div>
+        
     </div>
 
+        <div class="frame-search-activity">
+            <input type=text class="search-activity" id="frame_search_activity" placeholder="ค้นหารายชื่อกิจกรรม">
+            <img src="{{ asset('admin/img/รูปปุ่มค้นหน้าหน้าแบบประเมินกิจกรรม.png') }}" alt="รูปปุ่มค้นหน้าหน้าแบบประเมินกิจกรรม" class="img-btn-activity" id="img_btn_activity">
+        </div>
 
-    <div class="frame-search-activity" id="frame_search_activity">
-        <input type=text class="search-activity" placeholder="ค้นหารายชื่อกิจกรรม">
-        <img src="{{ asset('admin/img/รูปปุ่มค้นหน้าหน้าแบบประเมินกิจกรรม.png') }}" alt="รูปปุ่มค้นหน้าหน้าแบบประเมินกิจกรรม" class="img-btn-activity">
-    </div>
-
-
+<template id="cardTemplate"> 
     <div class="frame-activity-assessment">
         <div class="framecontentactivity">
             <h4 class="headingactivity">กิจกรรมเช็คอินโต้รุ่ง ช่วงติวไฟนอล 2568</h4>
-            <p class="messagecreationtime">สร้างเมื่อ 20 ต.ค. 2568 · ปิด Register 23 ต.ค. 2568</p>
             <div class="frameclosed">
-                <p class="pointclosed">· <span class="closed" >ปิดอยู่</span> </p>
+                <p class="pointclosed"></p>
+                <span class="closed" >ปิดแล้ว</span>
             </div>
         </div>
+        <p class="messagecreationtime">สร้างเมื่อ 20 ต.ค. 2568 · ปิด Register 23 ต.ค. 2568</p>
         <hr class="lineactivity-1">
         <div class="maximumnumber_outtime">
             <p class="maximumnumber">ผู้เข้าร่วมสูงสุด 10 คน</p>
@@ -116,25 +117,34 @@
         </div>
         <div class="framerank-1-2-3">
             <div class="framerank-1-assessment">
-                <p class="rank-1-assessmant">ดินสอ</p>
+                <p class="rank-1-assessment">ดินสอ</p>
             </div>
-            <div class="framerank-2-assessment">
-                <p class="rank-2-assessmant">สมุดโน้ต</p>
+            <div class="framerank-1-assessment">
+                <p class="rank-1-assessment">สมุดโน้ต</p>
             </div>
-            <div class="framerank-3-assessment">
-                <p class="rank-3-assessmant">สมุดโน้ต</p>
-            </div>
+            <div class="framerank-1-assessment">
+                <p class="rank-1-assessment">แบตสำรอง</p>
+            </div>               
         </div>
         <hr class="lineactivity-2">
         <div class="register">
             <p class="register-1">8 คนลงทะเบียนแล้ว</p>
-            <button class="view-details">ดูรายละเอียด</button>
+            <div class="view-details">
+                <a href="{{ url('admin/view_details/') }}" class="view-details-1">ดูรายละเอียด</a>
+            </div>
         </div>
     </div>
+</template>
 
-    
 <div id="cardContainer"></div>
 </div>
+
+<!--กรอบของแบบประเมิน-->
+<div class="frame-evaluation" id="frame_evaluation">
+
+
+</div>
+
 </div>
 
 

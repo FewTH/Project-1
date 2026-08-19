@@ -1258,7 +1258,6 @@ body {
   left: 8%;
   background-color: #ffffff;
   width: 450px;
-  height: auto;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.22);
   border: none;
@@ -1476,7 +1475,7 @@ body {
 /*กรอบpopupแก้ไขข้อมูล*/
 .popup-btn-edit-1{
   position: absolute;
-  top: 45%;
+  top: 25%;
   left: 8%;
   width: 400px;
   height: 340px;

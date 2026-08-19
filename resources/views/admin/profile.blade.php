@@ -144,30 +144,32 @@
     <!--ข้อมูลส่วนตัว-->
     <div class="personal_information">
         <h3>ข้อมูลส่วนตัว</h3>
-        <div class="btn-Edit-information-1"  id="Edit_information" >
+        <div class="btn-Edit-information-1"  id="Edit_information">
             <button class="btn-Edit-information-2"> แก้ไขข้อมูล </button>
         </div>
     </div>
+    <form onsubmit="return false">
     <!--ชื่อผู้ใช้-->
     <div class="username">
         <label class="Type_username"> ชื่อผู้ใช้ </label> 
-        <input type="text" id="Type_name" value="Admin02" class="input-username" disabled>
+        <input type="text" id="Type_name" value="Admin02" class="input-username" autocomplete="username" disabled>
     </div>
     <!--ชื่อ-นามสกุล-->
     <div class="FirstName-LastName">
         <label class="FirstNameLastName"> ชื่อ-นามสกุล </label>
-        <input type="text" id="Enter_firstname_lastname" value="นายนารี ใจดี" class="input-FirstName-LastName" disabled>
+        <input type="text" id="Enter_firstname_lastname" value="นายนารี ใจดี" class="input-FirstName-LastName" autocomplete="name" disabled>
     </div>
     <!--อีเมลผู้ใช้-->
     <div class="email-user">
         <label class="typeemail-user"> อีเมล </label>
-        <input type="text" id="Compose_email"  value="Admin02@gmail.com" class="input-email-user" disabled>
+        <input type="text" id="Compose_email"  value="Admin02@gmail.com" class="input-email-user" autocomplete="email" disabled>
     </div>
     <!--เบอร์โทร-->
     <div class="phone_number">
         <label class="typephone_number"> เบอร์โทร </label>
-        <input type="text" id="Enter_phonenumber" value="081-123-xxxx" class="input-phonenumber" disabled>
+        <input type="text" id="Enter_phonenumber" value="081-123-xxxx" class="input-phonenumber"  autocomplete="tel" disabled>
     </div>
+    </form>
 </div>
 
 <!--เปลี่ยนรหัสผ่าน-->
@@ -175,16 +177,19 @@
     <div class="password">
         <h3>รหัสผ่าน/เปลี่ยนรหัสผ่าน</h3>
     </div>
+    <form onsubmit="return false">
+        <input type="text" name="username" value="Admin02" autocomplete="username" class="hidden-username-1">
     <!--รหัสผ่านปัจจุบัน-->
     <div class="Current_password">
         <label class="typeCurrent_password">รหัสผ่านปัจจุบัน</label>
-        <input type="password" id="Enter_password" value="12345678" class="input-Current_password" disabled>
+        <input type="password" id="Enter_password" value="12345678" class="input-Current_password" autocomplete="current-password" disabled>
     </div>
     <!--เปลี่ยนครั้งล่าสุด-->
     <div class="Last_updated">
         <label class="typelast_updated">เปลี่ยนรหัสครั้งล่าสุด</label>
         <input type="text" id="Update_password" value="01/01/2026" class="input-Last_updated" disabled>
     </div>
+    </form>
      <!--ปุ่มเปลี่ยนหัสผ่าน-->
         <div class="Password-Change-Button" id="Change_password">
             <button class="btn-Change-password"> เปลี่ยนรหัสผ่าน </button>
@@ -192,12 +197,12 @@
 </div>
     <!--popupแก้ไขข้อมูลส่วนตัว-->
      <div class="popup-btn-edit" >
-        <dialog id="popup_btn_edit" class="popup-btn-edit-1" open>
+        <dialog id="popup_btn_edit" class="popup-btn-edit-1">
             <img src="{{ asset('admin/img/รูปการแก้ไขข้อมูล.png') }}" alt="รูปการแก้ไขข้อมูล" class="img-edit-information">
             <h2 class="confirm-edit">แก้ไขข้อมูล</h2>
             <p class="message-confirm-edit">คุณต้องการแก้ไขข้อมูลนี้หรือไม่?</p>
         <div class="btn_editinformation">
-            <div class="btn-Edit-information-profile" id="btn_Edit_information">
+            <div class="btn-Edit-information-profile">
                 <a href="{{ url('admin/edit_information') }}" class="btn-Edit-information-profile-1">ยืนยัน</a>
             </div>
             <div class="btn-close-Edit" id="btn_close_Edit">
@@ -216,7 +221,7 @@
             <div class="btn-change-password" id="btn_change_password">
                 <a href="{{ url('admin/change_password') }}" class="btn-change-password-1" >ยืนยัน</a>
             </div>
-            <div class="btn-close-change"  id="btn_change_password"> 
+            <div class="btn-close-change"  id="btn_close_change"> 
                 <button class="btn-close-change-1">ยกเลิก</button>
             </div>
         </div>
