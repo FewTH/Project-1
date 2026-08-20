@@ -148,15 +148,15 @@
         </div>
         <div class="framealloffon-assessment">
             <button class="frameall-assessment" id="frameall_assessment">
-                <p class="all-assessment">ทั้งหมด</p>
+                <p class="all-assessment" id="all_assessment">ทั้งหมด</p>
                 <span class="allnumber-assessment" id="allnumber_assessment">(0)</span>
             </button>
-            <button class="frameoff-assessment">
-                <p class="off-assessment">ปิดแล้ว</p>
+            <button class="frameoff-assessment" id="frameoff_assessment">
+                <p class="off-assessment" id="off_assessment">ปิดแล้ว</p>
                 <span class="offnumber-assessment" id="offnumber_assessment">(0)</span>
             </button>
-            <button class="farmeon-assessment">
-                <p class="on-assessment">เปิดอยู่</p>
+            <button class="farmeon-assessment" id="farmeon_assessment">
+                <p class="on-assessment" id="on_assessment">เปิดอยู่</p>
                 <span class="onnumber-assessment" id="onnumber_assessment">(0)</span>
             </button>
         </div>

@@ -62,6 +62,38 @@ function moveBulb(button) {
 }
 
 
+//ปุ่มทั้งหมดของหน้า assessment.blade.php
+const frameallassessment =  document.getElementById('frameall_assessment');
+
+if(frameallassessment);{
+    frameallassessment.addEventListener('click', function(){
+        document.getElementById('frameall_assessment').classList.add('active');
+        document.getElementById('frameoff_assessment').classList.remove('active');
+        document.getElementById('farmeon_assessment').classList.remove('active');
+        document.getElementById('all_assessment').classList.add('active');
+        document.getElementById('off_assessment').classList.remove('active');
+        document.getElementById('on_assessment').classList.remove('active');
+        document.getElementById('allnumber_assessment').classList.add('active');
+        document.getElementById('offnumber_assessment').classList.remove('active');
+        document.getElementById('onnumber_assessment').classList.remove('active');
+    });
+}
+
+
+const frameoffassessment = document.getElementById('frameoff_assessment');
+
+if(frameoffassessment){
+    frameoffassessment.addEventListener('click', function(){
+        document.getElementById('frameoff_assessment').classList.add('active');
+        document.getElementById('frameall_assessment').classList.remove('active');
+        document.getElementById('farmeon_assessment').classList.remove('active');
+        document.getElementById('off_assessment').classList.add('active');
+        document.getElementById('all_assessment').classList.remove('active');
+        document.getElementById('on_assessment').classList.remove('active');
+        document.getElementById('offnumber_assessment').classList.add('active');
+        document.getElementById('allnumber_assessment').classList.remove('active');
+    })
+}
 
 
 

@@ -2434,6 +2434,7 @@ body {
 
 /*กรอบของปุ่มทั้งหมด*/
 .frameall-assessment{
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2443,31 +2444,182 @@ body {
   height: 45px;
   cursor: pointer;
   box-shadow: 0px 8px 14px rgba(0,0,0,0.22);
+  overflow: hidden;
+}
+/*เอาไว้ดึงสีไปเปลี่ยนใน js*/
+.frameall-assessment.active{
+  border: 2px solid #FCD53F;
+  background-color: #222;
+  height: 50px;
+}
+/*เอฟเฟ็กต์กรอบของปุ่มทั้งหมด*/
+.frameall-assessment::before{
+  content: "";
+  background-color: #8c8d8d18;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+/*เอฟเฟ็กต์กรอบของปุ่มทั้งหมด เอาไว้ดึงไปเปลี่ยนสี js*/
+.frameall-assessment.active::before{
+  background-color: #000;
 }
 
+/*กรอบวงกลมเอฟเฟ็กต์กรอบของปุ่มทั้งหมด*/
+.frameall-assessment:hover::before{
+  width: 250px;
+  height: 250px;
+}
 
+/*ข้อความของปุ่มทั้งหมด*/
 .all-assessment{
   font-size: 16px;
   font-weight: 600;
   padding-right: 5px;
   color: #8C8D8D;
+  position: relative;
+  z-index: 1;
 }
 
+/*ข้อความของปุ่มทั้งหมด เอาไว้ดึงไปเปลี่ยนสีข้อความใน js*/
+.all-assessment.active{
+  color: #FCD53F;
+}
 
+/*ตัวเลขของปุ่มทั้งหมด*/
 .allnumber-assessment{
   font-size: 16px;
   font-weight: 600;
   color: #8C8D8D;
   position: relative;
   top: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+/*ตัวเลขของปุ่มทั้งหมด เอาไว้ดึงไปเปลี่ยนสีข้อความใน js*/
+.allnumber-assessment.active{
+  color: #FCD53F;
+}
+
+/*กรอบของปุ่มปิดแล้ว*/
+.frameoff-assessment{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: 2px solid #8C8D8D;
+  width: 120px;
+  height: 45px;
+  cursor: pointer;
+  box-shadow: 0px 8px 14px rgba(0,0,0,0.22);
+  overflow: hidden;
+}
+
+/*เอาไว้ดึงสีไปเปลี่ยนใน js*/
+.frameoff-assessment.active{
+  border: 2px solid #FCD53F;
+  background-color: #222;
+  height: 50px;
+}
+
+/*เอฟเฟ็กต์กรอบของปุ่มปิดแล้ว*/
+.frameoff-assessment::before{
+  content: "";
+  background-color: #8c8d8d18;
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+/*เอฟเฟ็กต์กรอบของปุ่มทั้งหมด เอาไว้ดึงไปเปลี่ยนสี js*/
+.frameoff-assessment.active::before{
+  background-color: #000;
+}
+
+/*กรอบวงลอมเอฟเฟ็กต์กรอบของปุ่มปิดแล้ว*/
+.frameoff-assessment:hover::before{
+  width: 250px;
+  height: 250px;
 }
 
 
+/*ข้อความของปุ่มปิดแล้ว*/
+.off-assessment{
+  font-size: 16px;
+  font-weight: 600;
+  padding-right: 5px;
+  color: #8C8D8D;
+  position: relative;
+  z-index: 1;
+}
+
+/*ตัวเลขของปุ่มปิดแล้ว เอาไว้ดึงไปเปลี่ยนสีข้อความใน js*/
+.off-assessment.active{
+  color: #FCD53F;
+}
+
+/*ตัวเลขของปุ่มปิดแล้ว*/
+.offnumber-assessment{
+  font-size: 16px;
+  font-weight: 600;
+  color: #8C8D8D;
+  position: relative;
+  top: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+/*ตัวเลขของปุ่มปิดแล้ว เอาไว้ดึงไปเปลี่ยนสีข้อความใน js*/
+.offnumber-assessment.active{
+  color: #FCD53F;
+}
 
 
+/*กรอบของปุ่มปิดแล้ว*/
+.farmeon-assessment{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  border: 2px solid #8C8D8D;
+  width: 120px;
+  height: 45px;
+  cursor: pointer;
+  box-shadow: 0px 8px 14px rgba(0,0,0,0.22);
+  overflow: hidden;
+}
 
+.on-assessment{
+  font-size: 16px;
+  font-weight: 600;
+  padding-right: 5px;
+  color: #8C8D8D;
+  position: relative;
+  z-index: 1;
+}
 
-
+.onnumber-assessment{
+  font-size: 16px;
+  font-weight: 600;
+  color: #8C8D8D;
+  position: relative;
+  top: 1px;
+  position: relative;
+  z-index: 1;
+}
 
 
 
